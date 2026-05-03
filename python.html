@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yash Rajput | Digital Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#0f0f0f,#1a1a1a,#121212);
+color:#e5e5e5;
+overflow-x:hidden;
+}
+
+/* 🔥 ENGINEER BACKGROUND ANIMATION */
+body::after{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background-image:
+linear-gradient(rgba(255,215,0,0.05) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,215,0,0.05) 1px, transparent 1px);
+background-size:40px 40px;
+z-index:-1;
+animation:gridMove 10s linear infinite;
+}
+
+@keyframes gridMove{
+0%{transform:translate(0,0);}
+100%{transform:translate(40px,40px);}
+}
+
+/* GOLD LINE */
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:4px;
+background:linear-gradient(90deg,#d4af37,#ffd700,#d4af37);
+box-shadow:0 0 20px gold;
+z-index:9999;
+}
+
+/* NAV */
+nav{
+position:fixed;
+width:100%;
+top:0;
+display:flex;
+justify-content:space-between;
+padding:18px 8%;
+background:rgba(20,20,20,0.9);
+backdrop-filter:blur(10px);
+}
+
+nav h2{
+color:#ffd700;
+text-shadow:0 0 10px gold;
+}
+
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav ul li a{
+color:#ccc;
+text-decoration:none;
+padding:8px 15px;
+border-radius:20px;
+transition:0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+color:#ffd700;
+box-shadow:0 0 12px gold;
+}
+
+/* SECTION */
+section{
+min-height:100vh;
+padding:120px 10%;
+margin:60px 40px;
+border-radius:20px;
+background:rgba(25,25,25,0.65);
+opacity:0;
+transform:translateY(40px);
+transition:0.6s;
+}
+
+section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+section:hover{
+box-shadow:0 0 25px rgba(255,215,0,0.25);
+}
+
+/* HEADING */
+h1{
+font-size:52px;
+margin-bottom:20px;
+}
+
+.highlight{
+background:linear-gradient(90deg,#ffd700,#d4af37);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* HOME */
+.home{
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+}
+
+/* 🔥 PREMIUM IMAGE */
+.home img{
+width:360px;
+border-radius:25px;
+padding:6px;
+background:linear-gradient(135deg,#ffd700,#d4af37);
+box-shadow:0 0 30px rgba(255,215,0,0.5);
+animation:float 4s ease-in-out infinite;
+transition:0.4s;
+}
+
+.home img:hover{
+transform:scale(1.06);
+box-shadow:0 0 50px gold;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-12px);}
+100%{transform:translateY(0);}
+}
+
+/* BOXES */
+.about-text,
+.education-box,
+.contact-box{
+padding:22px;
+border-left:5px solid gold;
+background:#1f1f1f;
+border-radius:10px;
+transition:0.3s;
+}
+
+.about-text:hover,
+.education-box:hover,
+.contact-box:hover{
+box-shadow:0 0 15px gold;
+}
+
+/* SKILLS */
+.skills-container{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.skill{
+padding:10px 20px;
+border:1px solid gold;
+border-radius:20px;
+color:gold;
+transition:0.3s;
+}
+
+.skill:hover{
+background:gold;
+color:black;
+transform:scale(1.1);
+}
+
+/* PROJECT */
+.project-card{
+background:#1f1f1f;
+padding:20px;
+margin:20px 0;
+border-left:5px solid gold;
+border-radius:10px;
+transition:0.4s;
+}
+
+.project-card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 25px gold;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+color:#777;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+.home{
+flex-direction:column;
+text-align:center;
+}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<h2>Digital Portfolio</h2>
+<ul>
+<li><a href="#home" class="active">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section id="home" class="home show">
+<div>
+<h1>Hello, I'm <span class="highlight">Yash Rajput</span></h1>
+<p style="color:gold;">ENTC Engineer | Tech Enthusiast | Building Real World Projects</p>
+</div>
+
+<img src="yash.png">
+</section>
+
+<section id="about">
+<h1>About Me</h1>
+<div class="about-text">
+Hello! I'm Yash Rajput, an Electronics and Telecommunication engineering student passionate about building real-world technology solutions.
+<br>
+I am currently exploring core electronics, embedded systems, and programming while continuously improving my problem-solving skills.
+<br>
+I believe in learning by doing, which is why I focus on creating practical projects that connect theory with real-life applications.
+<br>
+My goal is to grow into a skilled engineer who can innovate and contribute to impactful technology.
+</div>
+</section>
+
+<section id="education"> <h1>Education</h1> <div class="education-box"> <h3>Pursuing Bachelor of Engineering</h3> <p>Branch: Electronics & Telecommunication</p> <p>College: MIT Alandi</p> <p>Year: 2025 - 2029</p> </div> <div class="education-box"> <h3>Higher Secondary Education(12th)</h3> <p>Science Stream</p> <p>College: New English High School & Junior college</p> <p>Year: 2024-2025</p> </div> <div class="education-box"> <h3>Secondary Education(10th)</h3> <p>College: Fatima High School & Junior college</p> <p>Year: 2022-2023</p> </div> </section>
+
+<section id="skills">
+<h1>Skills</h1>
+<div class="skills-container">
+<div class="skill">Python</div>
+<div class="skill">Arduino</div>
+<div class="skill">Electronics</div>
+<div class="skill">OpenCV</div>
+<div class="skill">Mediapipe</div>
+<div class="skill">C Language</div>
+<div class="skill">Problem Solving</div>
+<div class="skill">PCB Designing</div>
+</div>
+</section>
+
+<section id="projects">
+<h1>Projects</h1>
+
+    
+      <div class="project-card">
+        <h3>Anti-Sleep Driver Alert System</h3>
+        <p>
+        Developed a safety-focused system that detects driver drowsiness using computer vision techniques and triggers alerts to prevent accidents.
+        <br><br>
+        <strong>Technologies:</strong> Python, OpenCV, Mediapipe  
+        <br>
+        <strong>Learning:</strong> Real-time detection, safety system design
+        </p>
+        <a href="https://youtu.be/AECBqjzrEWA?si=8uSLCLosm69SHfXj" target="_blank" style="color:gold;">
+▶ Watch Project Demo on YouTube
+</a>
+    </div>
+ <div class="project-card">
+        <h3>Automatic Light Control System</h3>
+        <p>
+        Built a motion-based lighting system using a PIR sensor that automatically controls lights based on human presence, improving energy efficiency.
+        <br><br>
+        <strong>Technologies:</strong> PIR Sensor, Circuit Design  
+        <br>
+        <strong>Learning:</strong> Automation and practical electronics
+        </p>
+        
+        <a href="https://youtu.be/gWTa7atoQ7E?si=cV6YqkDHtugwnTP8" target="_blank" style="color:gold;">
+▶ Watch Project Demo on YouTube
+</a>
+    </div>
+
+    <div class="project-card">
+        <h3>Adaptive Traffic Control System (Ongoing)</h3>
+        <p>
+        Designing a smart traffic system that adjusts signal timing dynamically based on vehicle density using computer vision.
+        <br><br>
+        <strong>Technologies:</strong> Python, YOLO, OpenCV  
+        <br>
+        <strong>Learning:</strong> Smart systems and real-time decision making
+        </p>
+    </div>
+
+</section>
+
+<section id="contact">
+<h1>Contact</h1>
+<div class="contact-box">
+<p>Email: yashrajput7457@gmail.com</p>
+<p>LinkedIn: Yash Rajput
+<a href="https://www.linkedin.com/in/yash-rajput-926471288/" target="_blank" style="color:gold;">
+🔗 Visit Profile
+</a>
+</p>
+</div>
+</section>
+
+<footer>
+© 2026 Yash Rajput
+</footer>
+
+<script>
+// SCROLL REVEAL
+const sections=document.querySelectorAll("section");
+
+window.addEventListener("scroll",()=>{
+sections.forEach(sec=>{
+const top=sec.getBoundingClientRect().top;
+if(top<window.innerHeight-100){
+sec.classList.add("show");
+}
+});
+});
+
+// ACTIVE NAV
+const links=document.querySelectorAll("nav ul li a");
+
+window.addEventListener("scroll",()=>{
+let current="";
+sections.forEach(sec=>{
+if(pageYOffset>=sec.offsetTop-200){
+current=sec.getAttribute("id");
+}
+});
+
+links.forEach(a=>{
+a.classList.remove("active");
+if(a.getAttribute("href")==="#"+current){
+a.classList.add("active");
+}
+});
+});
+</script>
+
+</body>
+</html>
